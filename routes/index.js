@@ -12,8 +12,10 @@ router.get('/', function (req, res, next) {
   let i = 0
   let billDay = '2020-07-19'
   new CronJob('*/10 * * * * 5', function () {
-    console.log('请求时间：' + new Date())
     queryVenueInfo(billDay, '2e3fd9d7-9287-4c83-8d8c-b508c6813815')
+  }, null, true);
+  new CronJob('5/10 * * * * 5', function () {
+    console.log('B场地请求时间：' + new Date())
     queryVenueInfo(billDay, '08abed5d-6e76-4c7a-a1a2-aeaf38a38a0d')
   }, null, true);
 });
@@ -45,22 +47,23 @@ function queryVenueInfo(billDay, VenueTypeID) {
       'Connection': 'keep-alive',
       'Content-Length': 181,
       'Content-Type': 'application/json'
-      // 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
     }
   }).then(res => {
     console.log('一、获取满足条件的场地列表成功√')
     let venueList = res.data.result[0].listWeixinVenueStatus // 获取到的数据列表
     let minutes = 0 // 可以玩的时间
     let okVenueList = [] // 可以玩的场次列表
-    console.log('╔═════════════════════════' + billDay + '所有满足的场地列表═════════════════════════╗')
+
+    console.log((VenueTypeID === '2e3fd9d7-9287-4c83-8d8c-b508c6813815' ? 'A区' : 'B区') + '场地请求时间：' + new Date())
+    console.log('╔════════════════════════' + billDay + '大于90分钟的场地列表════════════════════════╗')
     for (let index = 0; index < venueList.length - 1; index++) {
       minutes = (new Date(venueList[index + 1].startTime) - new Date(venueList[index].endTime)) / 60 / 1000
-      // 筛选能打90分钟以上且为下午14:00后的场地
       if (minutes >= 90) {
         console.log('║场地ID：' + venueList[index].venueID + '，开始时间：' + venueList[index].endTime.substr(11, 5) + '，可以玩：' + minutes + '分钟║')
       }
     }
     console.log('╚══════════════════════════════════════════════════════════════════════════════╝')
+
     console.log('╔═════════════════════════' + billDay + '满足条件的场地列表═════════════════════════╗')
     for (let index = 0; index < venueList.length - 1; index++) {
       minutes = (new Date(venueList[index + 1].startTime) - new Date(venueList[index].endTime)) / 60 / 1000
@@ -74,6 +77,7 @@ function queryVenueInfo(billDay, VenueTypeID) {
       }
     }
     console.log('╚══════════════════════════════════════════════════════════════════════════════╝')
+
     let startTime = parseInt(okVenueList[0].endTime.substr(11, 2) * 60) + parseInt(okVenueList[0].endTime.substr(14, 2))
     let data = {
       billDay,
@@ -92,11 +96,9 @@ function queryVenueInfo(billDay, VenueTypeID) {
         // venueTypeDisplayName: '综合馆羽毛球场A区'
       })
     }
-    console.log(data)
     // 预定场地
     orderVenue(data, VenueTypeID)
   }).catch(err => {
-    // console.log(err)
     console.log('一、获取满足条件的场地列表失败×')
   });
 }
@@ -121,13 +123,12 @@ function orderVenue(data, VenueTypeID) {
       'Connection': 'keep-alive',
       'Content-Length': 830,
       'Content-Type': 'application/json'
-      // 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
     }
   }).then(res => {
     if (res.status == 200) {
       console.log('二、预定场地成功√')
+      payVenue(res.data.result.billRecordNo, VenueTypeID)
     }
-    payVenue(res.data.result.billRecordNo, VenueTypeID)
   }).catch(err => {
     // console.log(err)
     console.log('二、预定场地失败×')
@@ -158,17 +159,14 @@ function payVenue(weixinBillRecordNo, VenueTypeID) {
       'Connection': 'keep-alive',
       'Content-Length': 176,
       'Content-Type': 'application/json'
-      // 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
     }
   }).then(res => {
     if (res.status == 200) {
       console.log('三、支付成功√，请至微信确认')
     }
   }).catch(err => {
-    // console.log(err)
     console.log('三、支付失败×')
   });
 }
-
 
 module.exports = router;
