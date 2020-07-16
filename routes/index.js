@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const axios = require('axios');
+const qs = require('qs');
 const CronJob = require('cron').CronJob;
 
 /* GET home page. */
@@ -32,14 +33,6 @@ function queryList() {
   axios({
     url: 'http://www.chn-hyd.com/XMTYZX/api/services/app/XMVenueBill/GetVenueBillDataAsync',
     method: 'POST',
-    data: {
-      VenueTypeID: '2e3fd9d7-9287-4c83-8d8c-b508c6813815',
-      VenueTypeDisplayName: '',
-      IsGetPrice: true,
-      isApp: true,
-      billDay: '2020-07-17',
-      webApiUniqueID: '6720c370-7961-d126-26b3-a56e51b8bae6'
-    },
     headers: {
       'Host': 'www.chn-hyd.com',
       'Accept': 'application/json, text/javascript, */*; q=0.01',
@@ -54,9 +47,17 @@ function queryList() {
       'Connection': 'keep-alive',
       'Content-Length': 181,
       'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+    },
+    data: {
+      VenueTypeID: '2e3fd9d7-9287-4c83-8d8c-b508c6813815',
+      webApiUniqueID: '6720c370-7961-d126-26b3-a56e51b8bae6',
+      VenueTypeDisplayName: '',
+      IsGetPrice: true,
+      isApp: true,
+      billDay: '2020-07-17'
     }
   }).then(res => {
-    console.log(res);
+    console.log(res.config);
     for (let index = 0; index < res.data.result.length; index++) {
       if (res.data.result[index].venueType.reportClass.indexOf('羽毛球') !== -1) {
         console.log(index + '响应消息：')
