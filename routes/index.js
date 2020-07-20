@@ -10,11 +10,11 @@ router.get('/', function (req, res, next) {
     title: '【厦门市体育中心】公众号抢场机器人'
   });
   let i = 0
-  let billDay = '2020-07-19'
-  new CronJob('*/10 * * * * 5', function () {
+  let billDay = '2020-07-26'
+  var AVenueJob = new CronJob('*/10 * * * * 5', function () {
     queryVenueInfo(billDay, '2e3fd9d7-9287-4c83-8d8c-b508c6813815')
   }, null, true);
-  new CronJob('5/10 * * * * 5', function () {
+  var BVenueJob = new CronJob('5/10 * * * * 5', function () {
     console.log('B场地请求时间：' + new Date())
     queryVenueInfo(billDay, '08abed5d-6e76-4c7a-a1a2-aeaf38a38a0d')
   }, null, true);
@@ -163,6 +163,8 @@ function payVenue(weixinBillRecordNo, VenueTypeID) {
   }).then(res => {
     if (res.status == 200) {
       console.log('三、支付成功√，请至微信确认')
+      AVenueJob.stop()
+      BVenueJob.stop()
     }
   }).catch(err => {
     console.log('三、支付失败×')
