@@ -8,11 +8,17 @@ let finish = false
 
 /* GET home page. */
 router.get('', function (req, res, next) {
-  res.render('test', {
-    title: '测试专用链接'
+  // res.render('test', {
+  //   title: '测试专用链接'
+  // });
+  res.json({
+    status: 200,
+    message: '上传成功'
   });
   let i = 0
-  console.log(location.href)
+  // console.log(i)
+  // console.log(req.query.date)
+  // res.end('你好')
   // var AVenueJob = new CronJob('* * * * * *', function () {
   //   console.log(i++)
   //   sendMail()
