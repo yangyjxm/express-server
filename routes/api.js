@@ -2,14 +2,25 @@ var express = require('express');
 var router = express.Router();
 
 var db = require('../db/db'); //引入db
-var userSql = require('../db/userSql');
+var WishSql = require('../db/WishSql');
 
-router.get("/getAllLoans", function (req, res, next) {
-  var results = {};
-  db.query(userSql.query, [], function (err, rows) {
-    results = rows;
-    console.log("results: " + results.str);
-    res.send(results);
+router.get("/getWish", function (req, res, next) {
+  db.query(WishSql.select, [], function (err, rows) {
+    res.send({
+      code: 200,
+      message: '查询成功'
+    });
+  });
+});
+
+router.post("/addWish", function (req, res, next) {
+  let param = req.body;
+  console.log(req.body)
+  db.query(WishSql.insert, [param.wishName, param.createDate, param.createBy], function (err, rows) {
+    res.send({
+      code: 200,
+      message: '插入成功'
+    });
   });
 });
 

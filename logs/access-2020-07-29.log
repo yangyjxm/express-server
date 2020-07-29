@@ -1,0 +1,7 @@
+::1 - - [29/Jul/2020:03:20:04 +0000] "GET /api/addWish HTTP/1.1" 404 1202 "-" "PostmanRuntime/7.21.0"
+::1 - - [29/Jul/2020:03:22:22 +0000] "POST /api/addWish HTTP/1.1" 200 127 "-" "PostmanRuntime/7.21.0"
+::1 - - [29/Jul/2020:08:09:31 +0000] "POST /api/addWish HTTP/1.1" 200 127 "-" "PostmanRuntime/7.21.0"
+::1 - - [29/Jul/2020:08:11:06 +0000] "POST /api/addWish HTTP/1.1" 200 127 "-" "PostmanRuntime/7.21.0"
+::1 - - [29/Jul/2020:08:44:12 +0000] "POST /api/addWish HTTP/1.1" 200 37 "-" "PostmanRuntime/7.21.0"
+::1 - - [29/Jul/2020:08:44:35 +0000] "POST /api/addWish HTTP/1.1" 200 37 "-" "PostmanRuntime/7.21.0"
+::1 - - [29/Jul/2020:08:49:09 +0000] "POST /api/addWish HTTP/1.1" 200 37 "-" "PostmanRuntime/7.21.0"

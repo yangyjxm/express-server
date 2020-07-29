@@ -7,6 +7,7 @@ var fs = require('fs')
 var FileStreamRotator = require('file-stream-rotator')
 
 var indexRouter = require('./routes/index');
+var orderVenueRouter = require('./routes/orderVenue');
 var apiRouter = require('./routes/api');
 var testRouter = require('./routes/test');
 
@@ -40,6 +41,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/ordeVenueBot', orderVenueRouter);
 app.use('/api', apiRouter);
 app.use('/test', testRouter);
 
