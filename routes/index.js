@@ -13,7 +13,7 @@ router.get('/venueBot', function (req, res, next) {
   });
   let billDay = req.query.date
   let minute = req.query.minute
-  var AVenueJob = new CronJob('*/3 * * * * 4', function () {
+  var AVenueJob = new CronJob('*/3 * * * * 5', function () {
     if (!Afinished) {
       queryVenueInfo(billDay, '2e3fd9d7-9287-4c83-8d8c-b508c6813815', minute)
     } else {
@@ -84,7 +84,7 @@ function queryVenueInfo(billDay, VenueTypeID, minute) {
       // 当A场没有符合条件的场地时，订B场
       if (VenueTypeID === '2e3fd9d7-9287-4c83-8d8c-b508c6813815' && !okVenueList.length) {
         Afinished = true
-        var BVenueJob = new CronJob('*/3 * * * * 4', function () {
+        var BVenueJob = new CronJob('*/3 * * * * 5', function () {
           if (!Bfinished) {
             queryVenueInfo(billDay, '08abed5d-6e76-4c7a-a1a2-aeaf38a38a0d', minute)
           } else {
