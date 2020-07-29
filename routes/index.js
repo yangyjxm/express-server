@@ -6,7 +6,6 @@ const CronJob = require('cron').CronJob;
 let Afinished = false
 let Bfinished = false
 
-/* GET home page. */
 router.get('/venueBot', function (req, res, next) {
   res.render('index', {
     title: '【厦门市体育中心】公众号抢场机器人'
@@ -58,6 +57,7 @@ function queryVenueInfo(billDay, VenueTypeID, minute) {
       let okVenueList = [] // 可以玩的场次列表
 
       console.log((VenueTypeID === '2e3fd9d7-9287-4c83-8d8c-b508c6813815' ? 'A区' : 'B区') + '场地请求时间：' + new Date())
+
       // console.log('╔════════════════════════' + billDay + '大于90分钟的场地列表════════════════════════╗')
       // for (let index = 0; index < venueList.length - 1; index++) {
       //   minutes = (new Date(venueList[index + 1].startTime) - new Date(venueList[index].endTime)) / 60 / 1000
@@ -70,7 +70,7 @@ function queryVenueInfo(billDay, VenueTypeID, minute) {
       console.log('╔═════════════════════════' + billDay + '满足条件的场地列表═════════════════════════╗')
       for (let index = 0; index < venueList.length - 1; index++) {
         minutes = (new Date(venueList[index + 1].startTime) - new Date(venueList[index].endTime)) / 60 / 1000
-        // 筛选能打minute分钟以上且为下午14:00后的场地
+        // 筛选能打minute分钟以上且为下午14:00——15:00开始的场地
         if (minutes >= minute && venueList[index].endTime.substr(11, 2) >= 14 && venueList[index].endTime.substr(11, 2) <= 15) {
           console.log('║场地ID：' + venueList[index].venueID + '，开始时间：' + venueList[index].endTime.substr(11, 5) + '，可以玩：' + minutes + '分钟║')
           okVenueList.push({
