@@ -7,8 +7,8 @@ var fs = require('fs')
 var FileStreamRotator = require('file-stream-rotator')
 
 var indexRouter = require('./routes/index');
-var orderVenueRouter = require('./routes/orderVenue');
 var apiRouter = require('./routes/api');
+var birthdayRouter = require('./routes/birthday');
 var testRouter = require('./routes/test');
 
 var app = express();
@@ -41,8 +41,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/orderVenueBot', orderVenueRouter);
-app.use('/api', apiRouter);
+app.use('/nodeapi', apiRouter);
+app.use('/birthday', birthdayRouter);
 app.use('/test', testRouter);
 
 // catch 404 and forward to error handler

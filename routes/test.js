@@ -1,51 +1,38 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-const nodemailer = require('nodemailer');
-const axios = require('axios');
-const qs = require('qs');
-const CronJob = require('cron').CronJob;
-let finish = false
+const nodemailer = require("nodemailer");
+const axios = require("axios");
+const qs = require("qs");
+const CronJob = require("cron").CronJob;
+let finish = false;
+var child_process = require('child_process');
 
-/* GET home page. */
-router.get('', function (req, res, next) {
-  let i = 0
-  res.render('test', {
-    title: '测试专用链接'
+router.get("/execFile", function (req, res, next) {
+  res.render("test", {
+    title: "node.js测试专用链接",
   });
-  // console.log(i)
-  // console.log(req.query.date)
-  // res.end('你好')
-  var AVenueJob = new CronJob('* * * * * *', function () {
-    console.log(i++)
-    // sendMail()
-    // if (i === 1) {
-    //   finish = true
-    // }
-    // if (finish) {
-    //   AVenueJob.stop()
-    // }
-  }, null, true);
+  child_process.execFile("/code/fronted_deploy.sh", {
+    shell: '/bin/bash'
+  }, function (error, stdout, stderr) {
+    console.log('stdout: ' + stdout);
+    console.log('stderr: ' + stderr);
+    if (error !== null) {
+      console.log('错误信息: ' + error);
+    }
+  });
 });
 
-function sendMail() {
-  let transport = nodemailer.createTransport({
-    host: 'smtp.qq.com',
-    secureConnection: true,
-    port: 465,
-    auth: {
-      user: "yangyjxm@foxmail.com",
-      pass: "xdjjzcrkrzbubiai"
+router.get("/exec", function (req, res, next) {
+  res.render("test", {
+    title: "node.js测试专用链接",
+  });
+  child_process.exec("bash /code/fronted_deploy.sh", function (error, stdout, stderr) {
+    console.log('stdout: ' + stdout);
+    console.log('stderr: ' + stderr);
+    if (error !== null) {
+      console.log('错误信息: ' + error);
     }
-  })
-  transport.sendMail({
-    from: '厦门市体育中心 yangyjxm@foxmail.com',
-    to: 'yangyjxm@foxmail.com',
-    subject: '球场预定成功',
-    text: '本周球场已经预定成功'
-  }, function (err, res) {
-    if (err) console.log(err)
-    else console.log(res)
-  })
-}
+  });
+});
 
 module.exports = router;
