@@ -63,9 +63,9 @@ router.get("/birthday", function (req, res, next) {
   });
 
   let birthdayList = {
-    "1/13": "香港姐",
-    // "2/10": "测试兄弟",
-    "4/13": "杨扬",
+    "1/13": "香港子",
+    // "4/13": "测试兄弟",
+    "5/13": "杨扬",
     "4/20": "李彤",
     "9/14": "李若",
     "9/28": "迟子璇",
@@ -82,7 +82,7 @@ router.get("/birthday", function (req, res, next) {
       console.log(birthdayList[today]);
       if (birthdayList[today]) {
         sendMail("宝贝小亚记得祝" + birthdayList[today] + "生日快乐", "yangyjxm@foxmail.com")
-        // sendMail("宝贝小亚记得祝" + birthdayList[today] + "生日快乐", "514933907@qq.com")
+        sendMail("宝贝小亚记得祝" + birthdayList[today] + "生日快乐", "514933907@qq.com")
 
         // 獲取access_token
         axios({
