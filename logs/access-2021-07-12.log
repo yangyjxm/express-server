@@ -1,0 +1,4 @@
+::1 - - [11/Jul/2021:16:00:01 +0000] "GET /birthday/remind HTTP/1.1" 200 208 "-" "curl/7.29.0"
+::ffff:162.142.125.39 - - [11/Jul/2021:21:50:10 +0000] "GET / HTTP/1.1" 404 1022 "-" "Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)"
+::ffff:209.159.154.178 - - [12/Jul/2021:01:12:59 +0000] "GET http://icanhazip.com/ HTTP/1.1" 404 1022 "-" "Go-http-client/1.1"
+::ffff:147.182.177.17 - - [12/Jul/2021:05:07:57 +0000] "GET / HTTP/1.0" 404 1022 "-" "-"

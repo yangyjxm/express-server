@@ -1,0 +1,5 @@
+::1 - - [04/Jul/2021:16:00:01 +0000] "GET /birthday/remind HTTP/1.1" 200 208 "-" "curl/7.29.0"
+::ffff:47.241.253.80 - - [05/Jul/2021:03:20:29 +0000] "GET http://passport.baidu.com/ HTTP/1.1" 404 1022 "-" "-"
+::ffff:47.241.253.80 - - [05/Jul/2021:06:11:03 +0000] "GET http://passport.baidu.com/ HTTP/1.1" 404 1022 "-" "-"
+::ffff:71.6.232.5 - - [05/Jul/2021:10:20:08 +0000] "GET / HTTP/1.1" 404 1022 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+::ffff:178.62.87.56 - - [05/Jul/2021:13:25:29 +0000] "GET / HTTP/1.0" 404 1022 "-" "-"

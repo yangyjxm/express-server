@@ -1,0 +1,6 @@
+::1 - - [30/Aug/2021:16:00:01 +0000] "GET /birthday/remind HTTP/1.1" 200 208 "-" "curl/7.29.0"
+::ffff:185.53.90.24 - - [30/Aug/2021:20:22:33 +0000] "GET http://icanhazip.com/ HTTP/1.1" 404 1022 "-" "Go-http-client/1.1"
+::ffff:220.200.155.36 - - [31/Aug/2021:05:18:29 +0000] "HEAD http://110.242.68.4/ HTTP/1.1" 404 1022 "-" "Mozilla/4.01687919 Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E; Media Center PC 6.0)"
+::ffff:118.126.124.198 - - [31/Aug/2021:07:01:56 +0000] "GET / HTTP/1.1" 404 1022 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
+::ffff:185.53.90.24 - - [31/Aug/2021:13:28:12 +0000] "GET http://icanhazip.com/ HTTP/1.1" 404 1022 "-" "Go-http-client/1.1"
+::ffff:185.53.90.24 - - [31/Aug/2021:13:51:03 +0000] "GET http://icanhazip.com/ HTTP/1.1" 404 1022 "-" "Go-http-client/1.1"

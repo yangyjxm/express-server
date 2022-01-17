@@ -1,0 +1,3 @@
+::1 - - [08/Oct/2021:16:00:01 +0000] "GET /birthday/remind HTTP/1.1" 200 208 "-" "curl/7.29.0"
+::ffff:167.248.133.43 - - [09/Oct/2021:09:23:01 +0000] "GET / HTTP/1.1" 404 1022 "-" "Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)"
+::ffff:47.241.246.181 - - [09/Oct/2021:12:31:24 +0000] "GET http://passport.baidu.com/ HTTP/1.1" 404 1022 "-" "-"

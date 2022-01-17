@@ -1,0 +1,8 @@
+::1 - - [10/Aug/2021:16:00:01 +0000] "GET /birthday/remind HTTP/1.1" 200 208 "-" "curl/7.29.0"
+::ffff:205.185.124.192 - - [10/Aug/2021:23:00:33 +0000] "GET http://example.com/ HTTP/1.1" 404 1022 "-" "Go-http-client/1.1"
+::ffff:18.144.70.67 - - [11/Aug/2021:02:55:06 +0000] "GET http://azenv.net/ HTTP/1.1" 404 1022 "-" "Go-http-client/1.1"
+::ffff:161.117.251.1 - - [11/Aug/2021:07:37:24 +0000] "GET http://www.baidu.com/ HTTP/1.1" 404 1022 "-" "curl/7.58.0"
+::ffff:220.200.158.43 - - [11/Aug/2021:07:37:25 +0000] "HEAD http://110.242.68.4/ HTTP/1.1" 404 1022 "-" "Mozilla/4.01687919 Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E; Media Center PC 6.0)"
+::ffff:118.126.124.74 - - [11/Aug/2021:09:05:05 +0000] "GET / HTTP/1.1" 404 1022 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
+::ffff:161.117.251.1 - - [11/Aug/2021:12:20:46 +0000] "GET http://www.baidu.com/ HTTP/1.1" 404 1022 "-" "curl/7.58.0"
+::ffff:185.222.59.8 - - [11/Aug/2021:12:32:21 +0000] "GET / HTTP/1.1" 404 1022 "-" "-"

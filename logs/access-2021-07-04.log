@@ -1,0 +1,2 @@
+::1 - - [03/Jul/2021:16:00:01 +0000] "GET /birthday/remind HTTP/1.1" 200 208 "-" "curl/7.29.0"
+::ffff:167.248.133.54 - - [04/Jul/2021:15:53:01 +0000] "GET / HTTP/1.1" 404 1022 "-" "Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)"

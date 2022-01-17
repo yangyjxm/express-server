@@ -1,0 +1,2 @@
+::1 - - [15/May/2021:16:00:02 +0000] "GET /birthday/remind HTTP/1.1" 200 208 "-" "curl/7.29.0"
+::ffff:92.118.161.17 - - [15/May/2021:17:58:23 +0000] "GET / HTTP/1.0" 404 1022 "-" "NetSystemsResearch studies the availability of various services across the internet. Our website is netsystemsresearch.com"

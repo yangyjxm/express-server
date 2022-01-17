@@ -1,0 +1,7 @@
+::1 - - [06/Sep/2021:16:00:01 +0000] "GET /birthday/remind HTTP/1.1" 200 208 "-" "curl/7.29.0"
+::ffff:193.37.255.114 - - [06/Sep/2021:18:14:47 +0000] "GET / HTTP/1.1" 404 1022 "-" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
+::ffff:193.37.255.114 - - [06/Sep/2021:18:14:48 +0000] "GET /favicon.ico HTTP/1.1" 404 1022 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:80.0) Gecko/20100101 Firefox/80.0"
+::ffff:34.79.68.246 - - [06/Sep/2021:18:14:52 +0000] "GET / HTTP/1.1" 404 1022 "-" "python-requests/2.26.0"
+::ffff:161.117.251.1 - - [07/Sep/2021:04:46:44 +0000] "GET http://passport.baidu.com/ HTTP/1.1" 404 1022 "-" "-"
+::ffff:162.142.125.42 - - [07/Sep/2021:05:20:36 +0000] "GET / HTTP/1.1" 404 1022 "-" "Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)"
+::ffff:161.117.251.1 - - [07/Sep/2021:13:14:15 +0000] "GET http://passport.baidu.com/ HTTP/1.1" 404 1022 "-" "-"
